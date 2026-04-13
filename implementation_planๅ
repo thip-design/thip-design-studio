@@ -1,0 +1,35 @@
+# Implementation Plan: Website Content Integration
+
+## Goal Description
+Integrate the real content from the "Thip Design Studio" form into the existing [index.html](file:///c:/thip-design-studio/index.html) website. The updates will include the brand messaging, a comprehensive list of services, a new pricing section, an updated "About You" section, "Why Choose Us" highlights, and new contact information. 
+
+## Proposed Changes
+
+### Content Integration
+#### [MODIFY] [index.html](file:///c:/thip-design-studio/index.html)
+- **Hero Section**: Minor tweaks to the tagline to match the provided brand style ("โมเดิร์น เข้าถึงง่าย").
+- **Services Section**: Expand the service cards to cover the exact list provided:
+  - ออกแบบและผลิตเสื้อ (Shirt Design & Production)
+  - ออกแบบโลโก้ (Logo Design)
+  - ออกแบบและผลิตนามบัตร (Business Cards)
+  - ออกแบบและผลิตสติ๊กเกอร์ (Stickers)
+  - ออกแบบและผลิตโบรชัวร์ (Brochures)
+  - ออกแบบสื่อออนไลน์ (Online Media)
+  - รับทำเว็บไซต์ (Website Design)
+- **New Section - Pricing**: Add a beautiful new section above or below Services to list the starting prices for all services (e.g., Shirt Design 700 THB, Logo Design 1000 THB, Website 3500 THB).
+- **New Section - Why Choose Us (จุดเด่น)**: Highlight the 3 key points: 1. ครบจบในที่เดียว 2. ดีไซน์สวย ทันสมัย 3. เร็ว.
+- **About Section**: Update the English placeholder text with the provided Thai description detailing the 6 years of experience and full-service approach.
+- **Contact & Footer Section**: Add the actual contact details:
+  - LINE: @411niqdo
+  - Facebook: Thip Design Studio
+  - Instagram: Thip Design Studio
+  - Phone: 0836291931
+
+## Verification Plan
+
+### Manual Verification
+As requested, I will implement this **step-by-step** and provide a live demo (or ask you to view the file locally and provide feedback) at each stage:
+1. **Stage 1**: Hero, Services, and Pricing Sections.
+2. **Stage 2**: "Why Choose Us" and About Sections.
+3. **Stage 3**: Contact details and Footer.
+At each step, I will ensure the new content is styled beautifully using the existing CSS framework, maintaining the modern, responsive, and premium aesthetic.
