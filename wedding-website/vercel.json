@@ -1,0 +1,1 @@
+{"framework":null,"buildCommand":"npm run build","outputDirectory":"public","rewrites":[{"source":"/admin-orders.html","destination":"/api/cloud"},{"source":"/api/:path*","destination":"/api/cloud"}]}

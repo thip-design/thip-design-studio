@@ -1,0 +1,1 @@
+{"name":"thip-wedding-studio","private":true,"scripts":{"build":"node scripts/build.cjs"},"dependencies":{"@vercel/blob":"latest"},"devDependencies":{"esbuild":"latest"},"overrides":{"zod":"^4.6.6"},"engines":{"node":"24.x"}}
