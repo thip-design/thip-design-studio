@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  const button=form.querySelector('button[type=submit]'),status=document.querySelector('#print-status'),slip=document.querySelector('#slip');let id='',busy=false;
  const en=()=>localStorage.getItem('thip-language')==='en';
  const sides=document.querySelector('#card-sides'),back=document.querySelector('#back'),product=document.querySelector('#product');
- const sync=()=>{const double=product.value!=='sticker'&&sides.selectedIndex===1;document.querySelector('#back-file-field').hidden=!double;back.disabled=!double;back.required=double;if(!double)back.value=''};
+ const sync=()=>{if(!back)return;const double=product.value!=='sticker'&&sides.selectedIndex===1;document.querySelector('#back-file-field').hidden=!double;back.disabled=!double;back.required=double;if(!double)back.value=''};
  sides.addEventListener('change',sync);product.addEventListener('change',sync);sync();
  form.addEventListener('submit',async event=>{
   event.preventDefault();event.stopImmediatePropagation();if(busy)return;
