@@ -94,6 +94,25 @@ if(location.pathname.endsWith('/cards.html')){
       else{firstGallery.appendChild(card);section.remove();}
     });
     firstGallery.querySelectorAll('.work-card figcaption').forEach((caption,index)=>{if(cardLabels[index])caption.textContent=cardLabels[index][0].toUpperCase()});
+    const preview=firstGallery.querySelector('.work-card');
+    const oldImage=preview?.querySelector('img');
+    if(oldImage){
+      const english=localStorage.getItem('thip-language')==='en';
+      const button=document.createElement('button');
+      button.type='button';button.className='invitation-preview';
+      button.setAttribute('aria-pressed','false');
+      const front=document.createElement('img');front.src='/assets/invitation-minimal-front.png';front.alt=english?'Wedding invitation — front':'การ์ดแต่งงานด้านหน้า';front.className='invitation-front';
+      const back=document.createElement('img');back.src='/assets/invitation-minimal-back.png';back.alt=english?'Wedding invitation — back':'การ์ดแต่งงานด้านหลัง';back.className='invitation-back';back.setAttribute('aria-hidden','true');
+      button.append(front,back);oldImage.replaceWith(button);
+      let pointerType='';
+      const showBack=visible=>{button.classList.toggle('show-back',visible);button.setAttribute('aria-pressed',String(visible));front.setAttribute('aria-hidden',String(visible));back.setAttribute('aria-hidden',String(!visible));button.setAttribute('aria-label',english?(visible?'Show front of invitation':'Show back of invitation'):(visible?'ดูการ์ดด้านหน้า':'ดูการ์ดด้านหลัง'))};
+      showBack(false);
+      button.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')showBack(true)});
+      button.addEventListener('pointerleave',event=>{if(event.pointerType==='mouse')showBack(false)});
+      button.addEventListener('pointerdown',event=>{pointerType=event.pointerType});
+      button.addEventListener('click',event=>{if(pointerType==='mouse'&&event.detail>0)return;showBack(!button.classList.contains('show-back'))});
+      button.addEventListener('keydown',event=>{if(event.key==='Escape')showBack(false)});
+    }
   }
 }
 document.querySelectorAll('.idea-card h3').forEach((heading) => {
