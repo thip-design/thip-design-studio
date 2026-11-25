@@ -51,7 +51,7 @@ h1,h2,h3,.kicker{font-family:"Playfair Display","Noto Sans Thai",sans-serif}
 body:has(.nav-links a.active[href="/cards.html"]) .gallery .work-card{border:0;background:transparent;box-shadow:none;padding:0}
 body:has(.nav-links a.active[href="/cards.html"]) .gallery .work-card img{display:block;width:100%;height:auto;aspect-ratio:7/5;object-fit:contain;object-position:center;border:0;background:transparent;box-shadow:none;filter:drop-shadow(0 3px 3px rgb(0 0 0 / 18%))}
 body:has(.nav-links a.active[href="/cards.html"]) .gallery .work-card figcaption{margin-top:22px;line-height:1.5}
-.invitation-preview{position:relative;display:block;width:100%;max-width:245px;aspect-ratio:5/7;margin-inline:auto;padding:0;border:0;background:transparent;cursor:pointer;touch-action:manipulation;filter:drop-shadow(0 3px 4px rgb(0 0 0 / 18%))}
+.invitation-preview{position:relative;display:block;width:60%;max-width:147px;aspect-ratio:5/7;margin-inline:auto;padding:0;border:0;background:transparent;cursor:pointer;touch-action:manipulation;filter:drop-shadow(0 3px 4px rgb(0 0 0 / 18%))}
 body:has(.nav-links a.active[href="/cards.html"]) .gallery .work-card .invitation-preview img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:5/7;object-fit:contain;filter:none;transition:opacity .25s ease}
 .invitation-preview .invitation-front{opacity:1}.invitation-preview .invitation-back{opacity:0}.invitation-preview.show-back .invitation-front{opacity:0}.invitation-preview.show-back .invitation-back{opacity:1}
 .invitation-preview:focus-visible{outline:2px solid var(--accent);outline-offset:8px}
