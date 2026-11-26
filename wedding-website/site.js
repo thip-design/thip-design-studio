@@ -94,7 +94,7 @@ if(location.pathname.endsWith('/cards.html')){
       else{firstGallery.appendChild(card);section.remove();}
     });
     firstGallery.querySelectorAll('.work-card figcaption').forEach((caption,index)=>{if(cardLabels[index])caption.textContent=cardLabels[index][0].toUpperCase()});
-    const invitationPairs=[['minimal-card','invitation-minimal'],['classic-card','invitation-formal'],['bold-card','invitation-typography']];
+    const invitationPairs=[['minimal-card','invitation-minimal'],['classic-card','invitation-formal'],['bold-card','invitation-typography'],['floral-card','invitation-nature-floral'],['painterly-card','invitation-watercolor'],['illustrative-card','invitation-character'],['photo-card','invitation-photography']];
     invitationPairs.forEach(([categoryId,assetName])=>{
     const preview=firstGallery.querySelector('.work-card[id="'+categoryId+'"]');
     const oldImage=preview?.querySelector('img');
