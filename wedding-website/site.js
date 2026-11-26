@@ -94,8 +94,8 @@ if(location.pathname.endsWith('/cards.html')){
       else{firstGallery.appendChild(card);section.remove();}
     });
     firstGallery.querySelectorAll('.work-card figcaption').forEach((caption,index)=>{if(cardLabels[index])caption.textContent=cardLabels[index][0].toUpperCase()});
-    const invitationPairs=[['minimal-card','invitation-minimal'],['classic-card','invitation-formal'],['bold-card','invitation-typography'],['floral-card','invitation-nature-floral'],['painterly-card','invitation-watercolor'],['illustrative-card','invitation-character'],['photo-card','invitation-photography']];
-    invitationPairs.forEach(([categoryId,assetName])=>{
+    const invitationPairs=[['minimal-card','invitation-minimal'],['classic-card','invitation-formal'],['bold-card','invitation-typography'],['floral-card','invitation-nature-floral'],['painterly-card','invitation-watercolor',true],['illustrative-card','invitation-character',true],['photo-card','invitation-photography']];
+    invitationPairs.forEach(([categoryId,assetName,reverseSides=false])=>{
     const preview=firstGallery.querySelector('.work-card[id="'+categoryId+'"]');
     const oldImage=preview?.querySelector('img');
     if(oldImage){
@@ -103,8 +103,8 @@ if(location.pathname.endsWith('/cards.html')){
       const button=document.createElement('button');
       button.type='button';button.className='invitation-preview';
       button.setAttribute('aria-pressed','false');
-      const front=document.createElement('img');front.src='/assets/'+assetName+'-front.png';front.alt=english?'Wedding invitation — front':'การ์ดแต่งงานด้านหน้า';front.className='invitation-front';
-      const back=document.createElement('img');back.src='/assets/'+assetName+'-back.png';back.alt=english?'Wedding invitation — back':'การ์ดแต่งงานด้านหลัง';back.className='invitation-back';back.setAttribute('aria-hidden','true');
+      const front=document.createElement('img');front.src='/assets/'+assetName+(reverseSides?'-back.png':'-front.png');front.alt=english?'Wedding invitation — front':'การ์ดแต่งงานด้านหน้า';front.className='invitation-front';
+      const back=document.createElement('img');back.src='/assets/'+assetName+(reverseSides?'-front.png':'-back.png');back.alt=english?'Wedding invitation — back':'การ์ดแต่งงานด้านหลัง';back.className='invitation-back';back.setAttribute('aria-hidden','true');
       button.append(front,back);oldImage.replaceWith(button);
       let pointerType='';
       const showBack=visible=>{button.classList.toggle('show-back',visible);button.setAttribute('aria-pressed',String(visible));front.setAttribute('aria-hidden',String(visible));back.setAttribute('aria-hidden',String(!visible));button.setAttribute('aria-label',english?(visible?'Show front of invitation':'Show back of invitation'):(visible?'ดูการ์ดด้านหน้า':'ดูการ์ดด้านหลัง'))};
